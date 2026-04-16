@@ -10,17 +10,17 @@ public class Button {
         this.y = LIMIT_Y / 2;
     }
 
-    // Teleports button to a random location [cite: 11, 13]
+    // Teleports button to a random location
     public void jump() {
         this.x = (int) (Math.random() * LIMIT_X);
         this.y = (int) (Math.random() * LIMIT_Y);
     }
 
-    // Standard CSA Getters
+    
     public int getX() { return x; }
     public int getY() { return y; }
 
-    // Logic to check if "mouse" is too close [cite: 14, 35]
+    // Logic to check if mouse is too close
     public boolean isClose(int mouseX, int mouseY) {
         double distance = Math.sqrt(Math.pow(x - mouseX, 2) + Math.pow(y - mouseY, 2));
         return distance < 100; // 100 pixels is the "danger zone"
