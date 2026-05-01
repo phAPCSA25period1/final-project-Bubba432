@@ -1,32 +1,50 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        Button submitButton = new Button();
+    // ... existing Phase 1 & 2 logic here ...
 
-        System.out.println("--- WELCOME TO IMPRACTICAL TURN IN BUTTON SPRINT 1 ---");
+    public static void startSprint3(Scanner scanner) {
+        ArrayList<Obstacle> activeErrors = new ArrayList<>();
+        activeErrors.add(new Obstacle("Initial Validation Error", 101));
 
-        while (true) {
-            System.out.println("\nButton is currently at: (" + submitButton.getX() + ", " + submitButton.getY() + ")");
-            System.out.print("Enter your mouse X coordinate (or -1 to quit): ");
-            int mX = input.nextInt();
-            if (mX == -1) break;
+        boolean sprint3Complete = false;
 
-            System.out.print("Enter your mouse Y coordinate: ");
-            int mY = input.nextInt();
+        while (!sprint3Complete) {
+            System.out.println("\n--- CURRENT ACTIVE ERRORS ---");
+            for (Obstacle o : activeErrors) {
+                System.out.println(o);
+            }
 
+            System.out.print("\nEnter Error ID to close (or '99' to attempt 'Turn In'): ");
+            int choice = scanner.nextInt();
 
-            if (submitButton.isClose(mX, mY)) {
-                System.out.println("TOO CLOSE! The button jumped!");
-                submitButton.jump();
-            } else if (mX == submitButton.getX() && mY == submitButton.getY()) {
-                System.out.println("SUCCESS! You clicked the button (somehow).");
-                break;
+            if (choice == 99) {
+                // DAY 2 LOGIC: The Multiplier
+                System.out.println("⚠️ Warning: Bypassing errors caused them to multiply!");
+                for (int i = 0; i < 3; i++) {
+                    int newId = (int)(Math.random() * 899) + 100;
+                    activeErrors.add(new Obstacle("Secondary System Failure", newId));
+                }
             } else {
-                System.out.println("Missed it! Try to get exactly on the coordinates without getting too close.");
+                // DAY 3 LOGIC: The Removal (Backward Iteration)
+                // We loop backward to avoid ConcurrentModificationException or skipping indexes
+                boolean removed = false;
+                for (int i = activeErrors.size() - 1; i >= 0; i--) {
+                    if (activeErrors.get(i).getId() == choice) {
+                        activeErrors.remove(i);
+                        removed = true;
+                        System.out.println(">> Error " + choice + " resolved.");
+                    }
+                }
+                if (!removed) System.out.println("!! ID not found. Pop-up persists !!");
+            }
+
+            // Check if all obstacles are cleared
+            if (activeErrors.isEmpty()) {
+                sprint3Complete = true;
             }
         }
-        input.close();
+        System.out.println("\n[FINAL STATUS]: All obstacles cleared. Submission link unlocked.");
     }
 }
