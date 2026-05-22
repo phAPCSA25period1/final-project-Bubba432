@@ -1,189 +1,44 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23508292)
-# AP Computer Science A – Final Project
-## Software & Systems Development Capstone
+# Impractical Turn-In System (AP CSA Final Project)
 
-Welcome to your **Final Project repository**.
+A deliberately frustrating, anti-user interface designed as a Google Chrome Extension, backed by an algorithm-heavy object-oriented Java prototype. This project satisfies all AP Computer Science A curriculum requirements including structural encapsulation, linear searches, dynamic mutation via collections, 2D array traversal, and algorithmic sorting.
 
-This repository will hold:
-- Your complete Java project
-- Your project journal and planning artifacts
-- Your final, working software product
-
-This is not just an assignment — it is a **capstone software project**.
+## 👤 User-Centered Design
+* **The User:** A student who finds typical online submission portals too passive, straightforward, and unengaging.
+* **The Core Problem:** Standard online turn-in procedures do not verify a student's active cognitive responsiveness, leading to mindless, passive submissions.
+* **The Solution:** A multi-layered verification gauntlet built on rigorous algorithmic constraints that forces the user to actively problem-solve and maintain sharp focus before a task can be completed.
 
 ---
 
-## 📌 Project Overview (Read Carefully)
+## 🗺️ The 4-Sprint Architectural Pathway
 
-In this project, you will:
-- Design and build a **real piece of software**
-- Solve **one real problem** for **one clearly defined user**
-- Work using **agile development**
-- Show evidence of **professional software practices**
-- Use AI responsibly as a planning and support tool
+### 🏁 Sprint 1: The Jumping Button (Logic & Movement)
+* **CSA Requirements:** Primitive variables, conditional statements (if/else), coordinate boundaries, and Math.random().
+* **Impractical Feature:** The "Turn In" target occupies a 2D coordinate space. Whenever the user's cursor entry comes within a 100-pixel "danger zone," the button uses distance-formula calculation to instantly teleport to a random set of coordinates.
 
-You will leave this course with something you can confidently say:
+### 🔤 Sprint 2: The Character Scramble (Arrays & Linear Search)
+* **CSA Requirements:** 1D array initialization, array traversal loops, character casting, and linear search algorithms.
+* **Impractical Feature:** To unlock the next level, the user must look through a randomized 50-character array to select indices that spell out the exact string "IPROMISETHISISNOTLATE". Any incorrect index selection triggers a full state reset and rearranges the entire board.
 
-> “I built this software.”
+### ⚠️ Sprint 3: The Pop-up Multiplier (ArrayLists & Interacting Classes)
+* **CSA Requirements:** ArrayList dynamic mutation, object collections, backward index iteration, and multiple interacting classes.
+* **Impractical Feature:** Approaching the submission target spawns an array of Obstacle objects representing fake error messages. The list grows exponentially unless handled. To clear the queue, the user must close obstacles by inputting their specific IDs; removing items requires a reverse loop to avoid a ConcurrentModificationException.
 
----
-
-## 🔁 Required Workflow (How You Must Work)
-
-### ✅ Daily GitHub Commits (Required)
-You are expected to:
-- Make **at least one meaningful commit every class day**
-- Write **descriptive commit messages** that explain:
-  - What you changed
-  - Why you changed it
-  - What goal it supports
-
-✅ Good commit messages:
-- `Sprint 1: Created Player class and tested constructor`
-- `Sprint 2: Implemented 2D map and verified movement logic`
-
-🚫 Poor commit messages:
-- `updates`
-- `stuff`
-- `final version`
-
-Your commit history is **evidence of your thinking and progress**.
+### 🎛️ Sprint 4: The Final Verification Grid (2D Arrays & Sorting)
+* **CSA Requirements:** 2D array matrix traversal (int[][]), nested loops, and the Selection Sort algorithm.
+* **Impractical Feature:** The final submission passcode is locked inside a 3x3 scrambled matrix. The user must manually run a nested Selection Sort pass to align the data structure properly while the submission button slowly sinks to the bottom of the window under a simulated gravity constraint.
 
 ---
 
-## 🔁 Agile Development & Sprints
+## 🛠️ Porting Architecture (Java to JavaScript)
+The foundational logic was engineered using lower-level Java syntax to map cleanly to native JavaScript arrays and collections without relying on heavy external third-party APIs.
 
-You will complete **4 sprints**.  
-Each sprint includes:
-- Planning
-- Building
-- Testing
-- Feedback and reflection
-
-Each sprint ends with:
-- A sprint grade
-- A sprint reflection
-- Feedback exchanged with peers
-
-🚫 You may NOT complete multiple sprints at once.  
-✅ Each sprint grade is **final**.
+* **Variables:** int x = 10; translates directly to let x = 10;
+* **Dynamic Collections:** ArrayList<Obstacle> converts seamlessly to standard JavaScript arrays [] utilizing .filter() or .push() operations.
+* **Iterators:** Traditional standard index loops match identically across both languages.
 
 ---
 
-## 🧪 Testing Expectations
-
-Testing is required every sprint.
-
-✅ Testing may include:
-- Running the program with different inputs
-- Print‑based testing
-- Driver program testing
-- Verifying logic and edge cases
-
-You should be able to explain:
-- What you tested
-- How you tested it
-- What you discovered or fixed
-
----
-
-## 🗂️ Required Project Components
-
-Your final project must include:
-
-- ✅ Multiple interacting Java classes
-- ✅ Encapsulation (`private` fields, appropriate getters/setters)
-- ✅ Arrays and/or ArrayLists
-- ✅ A purposeful **2D array**
-- ✅ A working driver program (`main`)
-- ✅ A class diagram matching your final code
-- ✅ Clear documentation
-- ✅ A program that runs and works
-
-Inheritance and interfaces are optional but encouraged.
-
----
-
-## 🤖 Using AI (Allowed, With Responsibility)
-
-You may use AI to:
-- Organize ideas
-- Plan sprints
-- Debug code
-- Suggest design improvements
-
-You must:
-- Document how you used AI
-- Review and evaluate AI suggestions
-- Understand and explain your final code
-
-AI should act like:
-> A junior developer you supervise — not something that builds the project for you.
-
----
-
-## 📘 Project Journal
-
-All planning, work logs, testing notes, and reflections live in **your project journal**.
-
-If it happened during this project, it should be documented there.
-
----
-
-## ✅ Final Submission Expectations
-
-By the end of the project:
-- Your program should run reliably
-- Your technical requirements should be met
-- Your code should be readable and organized
-- Your repository should look **professional**
-
----
-
-# ✨ Final Step: README Update (Very Important)
-
-When your project is complete, you must **rewrite this README**  
-so it reflects **your software**, not the assignment.
-
-Your final README should include:
-
----
-
-## 🔹 Project Title
-
-## 🔹 What This Software Does
-Explain your project in plain language.
-
-## 🔹 Who It’s For
-Describe the user and the problem being solved.
-
-## 🔹 How to Run the Program
-Clear steps so someone else can run your project.
-
-## 🔹 Technical Overview
-Brief description of:
-- Main classes
-- Key data structures
-- Program logic
-
-## 🔹 Class Diagram
-Include or link your final class diagram.
-
-## 🔹 Known Limitations / Future Improvements
-What works well, and what you would improve with more time.
-
----
-
-## 🎯 Final Reminder
-
-This repository represents **you as a developer**.
-
-Take pride in:
-- Your process
-- Your commits
-- Your code
-- Your documentation
-
-Build something real.  
-Build it thoughtfully.  
-Build it well.
+## 📤 Project Deployment Instructions
+1. Host all four Java development sprint directories (/Sprint1_Java through /Sprint4_Java) containing separate App.java components in your repository root.
+2. Store production configuration files (manifest.json, content.js, and styles.css) within the /Final_Extension folder.
+3. Open Chrome, navigate to chrome://extensions/, enable Developer Mode, and choose Load unpacked pointing to your extension build directory.
